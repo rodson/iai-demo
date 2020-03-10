@@ -1,0 +1,27 @@
+{
+  "name": "iai-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rodson/iai-demo.git"
+  },
+  "dependencies": {
+    "koa": "^2.11.0",
+    "koa-bodyparser": "^4.2.1",
+    "koa-router": "^7.4.0",
+    "supertest": "^4.0.2",
+    "tencentcloud-sdk-nodejs": "^3.0.105"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rodson/iai-demo/issues"
+  },
+  "homepage": "https://github.com/rodson/iai-demo#readme"
+}

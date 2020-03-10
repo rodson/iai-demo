@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>iai demo</title>
+  <link rel="stylesheet" href="./app.css">
+</head>
+<body>
+  <div id="main">
+    <div class="title">
+      <img class="p-brand-item" src="https://main.qcloudimg.com/raw/341b9c76fda65c93010e293fc8309af4.svg">
+    </div>
+    <div class="container">
+      <div class="left">
+        <div class="label-title">检测图片</div>
+        <div id="preview-container">
+          <img id="preview-image" src="" alt="">
+          <div id="img-analysis">
+            <div id="img-analysis-rect" style="display: none;"></div>
+          </div>
+        </div>
+        <div id="upload"><label class="upload-label" for="source-input">上传图片</label></div>
+        <input type="file" id="source-input" name="image" accept="image/png, image/jpeg">
+      </div>
+
+      <div class="right">
+        <div class="label-title">RESPONSE JSON</div>
+        <div id="result"></div>
+      </div>
+    </div>
+  </div>
+  
+  <script src="./app.js"></script>
+</body>
+</html>

@@ -19,11 +19,12 @@ let client = new IaiClient(cred);
  * @param { string } image 
  */
 function detectFace(image) {
-  return new Promise((resolve) => {
+  return new Promise((resolve, reject) => {
     const req = new models.DetectFaceRequest();
-    req.Url = 'http://i2.sinaimg.cn/ty/nba/2015-07-05/U10236P6T12D7648505F44DT20150705114547.jpg';
+    req.Image = image;
     req.FaceModelVersion = '3.0';
     req.NeedFaceAttributes = 1;
+    req.NeedQualityDetection = 1;
 
     client.DetectFace(req, (errMsg, response) => {
         if (errMsg) {

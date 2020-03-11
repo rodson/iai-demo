@@ -55,7 +55,7 @@ async function requestDetectFace(imgBase64) {
 
   // 去除base64头
   const image = imgBase64.replace(/^data:image\/\w+;base64,/, '')
-  const response = await fetch('http://localhost:3000/detectFace', {
+  const response = await fetch('/detectFace', {
     method: 'POST',
     headers: {
       'Accept': 'application/json',

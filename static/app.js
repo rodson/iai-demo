@@ -8,6 +8,8 @@ const previewImage = document.getElementById('preview-image');
 const resultDisplay = document.getElementById('result');
 // 人脸框
 const faceRect = document.getElementById('img-analysis-rect');
+// 请求loading
+const requestLoading = document.getElementById('request-loading');
 
 sourceInput.addEventListener('change', handleImageChange);
 
@@ -48,6 +50,9 @@ async function setPreviewImage(imgBase64) {
 }
 
 async function requestDetectFace(imgBase64) {
+  resultDisplay.innerHTML = '';
+  requestLoading.style.display = 'block';
+
   // 去除base64头
   const image = imgBase64.replace(/^data:image\/\w+;base64,/, '')
   const response = await fetch('/detectFace', {
@@ -58,6 +63,8 @@ async function requestDetectFace(imgBase64) {
     },
     body: JSON.stringify({ image })
   });
+
+  requestLoading.style.display = 'none';
 
   return await response.json();
 }

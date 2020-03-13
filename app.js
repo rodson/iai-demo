@@ -18,6 +18,3 @@ router.post('/detectFace', detectFace);
 app.use(router.routes());
 
 app.listen(3000);
-
-module.exports = app;
-

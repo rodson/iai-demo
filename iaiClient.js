@@ -14,18 +14,17 @@ const Credential = tencentcloud.common.Credential
 let cred = new Credential(properties.secretId, properties.secretKey);
 let client = new IaiClient(cred);
 
-/**
- * DetectFace
- * @param { string } image 
- */
 function detectFace(image) {
   return new Promise((resolve, reject) => {
+
+    // 请求参数
     const req = new models.DetectFaceRequest();
     req.Image = image;
     req.FaceModelVersion = '3.0';
     req.NeedFaceAttributes = 1;
     req.NeedQualityDetection = 1;
 
+    // 发送请求
     client.DetectFace(req, (errMsg, response) => {
         if (errMsg) {
           reject(errMsg);

@@ -11,16 +11,23 @@ const faceRect = document.getElementById('img-analysis-rect');
 // 请求loading
 const requestLoading = document.getElementById('request-loading');
 
+// 监听文件变化
 sourceInput.addEventListener('change', handleImageChange);
 
 // 处理图片选择
 async function handleImageChange() {
   faceRect.style.display = 'none';
+
   const file = sourceInput.files[0];
   const imgBase64 = await toBase64(file);
+
+  // 设置图片预览
   await setPreviewImage(imgBase64);
+  // 请求人脸检测接口
   const result = await requestDetectFace(imgBase64);
+  // 显示检测结果
   showResult(JSON.stringify(result, null, 4));
+  // 画人脸框
   drawFaceRect(result);
 }
 

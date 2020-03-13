@@ -8,13 +8,18 @@ const path = require('path');
 
 const app = new Koa();
 
+// 设置静态资源目录
 app.use(static(path.join( __dirname,  './static')));
 app.use(bodyParser());
 
 const router = new Router();
+
+// 接口
 router.post('/detectFace', detectFace);
+
 app.use(router.routes());
 
 app.listen(3000);
 
 module.exports = app;
+
